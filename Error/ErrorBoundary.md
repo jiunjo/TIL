@@ -98,6 +98,38 @@ ErrorBoundary를 사용하면:
 
 📌 최종 요약
 	•	ErrorBoundary는 렌더링 오류 전용 보호막이다.
+
+	# 🧠 TIL - 클래스 컴포넌트 vs 함수형 컴포넌트 + ErrorBoundary가 여전히 클래스인 이유
+
+## 📅 날짜
+2025-11-20
+
+---
+
+## 📘 오늘 배운 내용 요약
+
+React에서는 화면 컴포넌트를 만들 때 과거에는 클래스 컴포넌트를 사용했지만,  
+React 16.8 이후 Hooks가 도입되면서 **함수형 컴포넌트가 사실상 표준이 되었다.**
+
+일반적인 UI 컴포넌트 제작은 함수형만으로 충분하며,  
+상태 관리·생명주기·이벤트 처리 등 모든 기능이 Hooks로 대체 가능하다.
+
+하지만 단 하나, **ErrorBoundary(에러 경계)** 기능만큼은  
+현재도 클래스 컴포넌트로만 구현 가능하다.  
+React 공식 문서에서도 "Error Boundaries must be class components"라고 명시하고 있다.
+
+---
+
+## 🔍 핵심 개념 정리
+
+### 1. 클래스 컴포넌트
+- 문법 형태:
+  ```js
+  class MyComponent extends React.Component {
+    render() {
+      return <div>Hello</div>;
+    }
+  }
 	•	정상 렌더 → 원래 UI
 	•	렌더 오류 → fallback UI
 	•	async/await, API 오류, 404는 ErrorBoundary 감지 범위 밖
